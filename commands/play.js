@@ -16,7 +16,7 @@ export default async function play(interaction, distube, voiceChannel) {
   try {
     await distube.play(voiceChannel, url, {
       member: interaction.member,
-      textChannel: interaction.channel,
+      textChannel: interaction.channel
     });
 
     const { queue, song } = await songAdded;

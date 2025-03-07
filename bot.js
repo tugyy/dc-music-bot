@@ -1,6 +1,6 @@
 import { Client, Events, GatewayIntentBits } from "discord.js";
 import { DisTube } from "distube";
-import { YtDlpPlugin } from "@distube/yt-dlp";
+import { YouTubePlugin } from "@distube/youtube";
 import ping from "./commands/ping.js";
 import play from "./commands/play.js";
 import skip from "./commands/skip.js";
@@ -8,8 +8,7 @@ import stop from "./commands/stop.js";
 import pause from "./commands/pause.js";
 import resume from "./commands/resume.js";
 import queue from "./commands/queue.js";
-import dotenv from "dotenv";
-
+import dotenv from 'dotenv';
 dotenv.config();
 
 const client = new Client({
@@ -22,7 +21,7 @@ const client = new Client({
 });
 
 const distube = new DisTube(client, {
-  plugins: [new YtDlpPlugin()],
+  plugins: [new YouTubePlugin()],
   emitNewSongOnly: true,
 });
 
