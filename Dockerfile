@@ -6,10 +6,10 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json (if available)
 COPY package.json ./
-COPY package-lock.json ./ 
+# COPY package-lock.json ./  # Uncomment if you have a package-lock.json
 
-# Install dependencies
-RUN npm install
+# Install the latest npm and dependencies
+RUN npm install -g npm@latest && npm install
 
 # Copy the rest of your application files
 COPY . .
