@@ -1,6 +1,9 @@
 # Use Node.js version 22.14.0 as a base
 FROM node:22.14.0
 
+# Install ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg
+
 # Set the working directory
 WORKDIR /usr/src/app
 
